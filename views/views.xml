@@ -12,6 +12,7 @@
                         <tree string="URL Links" editable="bottom">
                             <field name="name" string="Display link name" required="1"/>
                             <field name="url" string="url" required="1"/>
+                            <field name="alt_desc" string="Alt description"/>
                         </tree>
                     </field>
                 </page>
@@ -26,51 +27,11 @@
                 <sheet>
                     <field name="name" required="True"/>
                     <field name="url" required="True"/>
+                    <field name="alt_desc"/>
                     <field name="product_tmpl_id" invisible="1"/>
                 </sheet>
             </form>
         </field>
     </record>
-
-    <!-- actions opening views on models -->
-    <!--
-    <record model="ir.actions.act_window" id="website_product_resource_link.action_window">
-      <field name="name">website_product_resource_link window</field>
-      <field name="res_model">website_product_resource_link.website_product_resource_link</field>
-      <field name="view_mode">tree,form</field>
-    </record>
-    -->
-
-    <!-- server action to the one above -->
-    <!--
-    <record model="ir.actions.server" id="website_product_resource_link.action_server">
-      <field name="name">website_product_resource_link server</field>
-      <field name="model_id" ref="model_website_product_resource_link_website_product_resource_link"/>
-      <field name="code">
-        action = {
-          "type": "ir.actions.act_window",
-          "view_mode": "tree,form",
-          "res_model": self._name,
-        }
-      </field>
-    </record>
-    -->
-
-    <!-- Top menu item -->
-    <!--
-    <menuitem name="website_product_resource_link" id="website_product_resource_link.menu_root"/>
-    -->
-    <!-- menu categories -->
-    <!--
-    <menuitem name="Menu 1" id="website_product_resource_link.menu_1" parent="website_product_resource_link.menu_root"/>
-    <menuitem name="Menu 2" id="website_product_resource_link.menu_2" parent="website_product_resource_link.menu_root"/>
-    -->
-    <!-- actions -->
-    <!--
-    <menuitem name="List" id="website_product_resource_link.menu_1_list" parent="website_product_resource_link.menu_1"
-              action="website_product_resource_link.action_window"/>
-    <menuitem name="Server to list" id="website_product_resource_link" parent="website_product_resource_link.menu_2"
-              action="website_product_resource_link.action_server"/>
-    -->
   </data>
 </odoo>

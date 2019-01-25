@@ -1,2 +1,2 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_website_product_resource_link_website_product_resource_link,website_product_resource_link.website_product_resource_link,model_website_product_resource_link_website_product_resource_link,,1,0,0,0
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"access_product_link","product.link.user","model_product_links","base.group_user",1,1,1,1

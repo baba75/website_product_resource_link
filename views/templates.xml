@@ -15,7 +15,7 @@
                     <h2>Resources</h2>
                     <ul>
                     <t t-foreach="product.link_ids" t-as="link">
-                        <li><a t-att-href="link.url"><span t-field="link.name"/></a></li>    
+                        <li><a t-att-href="link.url" t-att-alt="link.alt_desc"><span t-field="link.name"/></a></li>    
                     </t>
                     </ul>
                 </div>
