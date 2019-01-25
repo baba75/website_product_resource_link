@@ -1,26 +1,28 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "website_product_resource_link",
+    'name': "Website Product Resource Links",
 
     'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
+        Products resource links
+        """,
 
     'description': """
-        Long description of module's purpose
+        Extend the product with links to resources. You can add any url you like,
+        e.g. link to product video, link to brochure, technical datasheets, and
+        so on.
     """,
 
-    'author': "My Company",
-    'website': "http://www.yourcompany.com",
+    'author': "Alberto Carollo - Ecobeton",
+    'website': "https://www.ecobeton.com",
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/10.0/odoo/addons/base/module/module_data.xml
     # for the full list
-    'category': 'Uncategorized',
+    'category': 'Website',
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': ['base','website_sale'],
 
     # always loaded
     'data': [

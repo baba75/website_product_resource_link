@@ -1,22 +1,26 @@
 <odoo>
     <data>
-        <!-- <template id="listing"> -->
-        <!--   <ul> -->
-        <!--     <li t-foreach="objects" t-as="object"> -->
-        <!--       <a t-attf-href="#{ root }/objects/#{ object.id }"> -->
-        <!--         <t t-esc="object.display_name"/> -->
-        <!--       </a> -->
-        <!--     </li> -->
-        <!--   </ul> -->
-        <!-- </template> -->
-        <!-- <template id="object"> -->
-        <!--   <h1><t t-esc="object.display_name"/></h1> -->
-        <!--   <dl> -->
-        <!--     <t t-foreach="object._fields" t-as="field"> -->
-        <!--       <dt><t t-esc="field"/></dt> -->
-        <!--       <dd><t t-esc="object[field]"/></dd> -->
-        <!--     </t> -->
-        <!--   </dl> -->
-        <!-- </template> -->
+        <!-- Adds assets in Odoo -->
+        <template id="assets_product_link" name="Product link assets" inherit_id="web.assets_frontend">
+            <xpath expr="//link[last()]" position="after">
+                        <link rel="stylesheet" type="text/css" href="/website_product_resource_link/static/src/css/links.css"/>
+            </xpath>
+        </template>
+        
+        <!-- Add product links to resources just after the "Add to cart" button -->
+        <template id="product_links" inherit_id="website_sale.product" name="Product Links">
+            <xpath expr="//form[@class='js_add_cart_variants']" position="after">
+                <hr t-if="product.link_ids" />
+                <div>
+                    <h2>Resources</h2>
+                    <ul>
+                    <t t-foreach="product.link_ids" t-as="link">
+                        <li><a t-att-href="link.url"><span t-field="link.name"/></a></li>    
+                    </t>
+                    </ul>
+                </div>
+                <hr />
+            </xpath>
+        </template>
     </data>
 </odoo>

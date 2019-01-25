@@ -1,19 +1,36 @@
 <odoo>
   <data>
-    <!-- explicit list view definition -->
-    <!--
-    <record model="ir.ui.view" id="website_product_resource_link.list">
-      <field name="name">website_product_resource_link list</field>
-      <field name="model">website_product_resource_link.website_product_resource_link</field>
-      <field name="arch" type="xml">
-        <tree>
-          <field name="name"/>
-          <field name="value"/>
-          <field name="value2"/>
-        </tree>
-      </field>
+    <record model="ir.ui.view" id="product_links_tab">
+        <field name="name">product.links.form.view</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[last()]" position="after">
+                <page string="Links" name="links">
+                    <separator string="Links to product resources" />
+                    <field name="link_ids" mode="tree" context="{'default_name': name, 'default_product_tmpl_id': active_id}">
+                        <tree string="URL Links" editable="bottom">
+                            <field name="name" string="Display link name" required="1"/>
+                            <field name="url" string="url" required="1"/>
+                        </tree>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>  
+    <record model="ir.ui.view" id="view_product_links_form">
+        <field name="name">product.links.form</field>
+        <field name="model">product.links</field>
+        <field name="arch" type="xml">
+            <form string="Product Links">
+                <sheet>
+                    <field name="name" required="True"/>
+                    <field name="url" required="True"/>
+                    <field name="product_tmpl_id" invisible="1"/>
+                </sheet>
+            </form>
+        </field>
     </record>
-    -->
 
     <!-- actions opening views on models -->
     <!--

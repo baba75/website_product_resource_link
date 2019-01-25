@@ -2,14 +2,16 @@
 
 from odoo import models, fields, api
 
-# class website_product_resource_link(models.Model):
-#     _name = 'website_product_resource_link.website_product_resource_link'
+class ProductLinks(models.Model):
+    _name = 'product.links'
 
-#     name = fields.Char()
-#     value = fields.Integer()
-#     value2 = fields.Float(compute="_value_pc", store=True)
-#     description = fields.Text()
-#
-#     @api.depends('value')
-#     def _value_pc(self):
-#         self.value2 = float(self.value) / 100
+    name = fields.Char('Link label', required=True, translate=True)
+    url = fields.Char('Link URL', required=True, translate=True)
+    product_tmpl_id = fields.Many2one('product.template', 'Related Product', copy=True)
+
+class ProductTemplate(models.Model):
+    _inherit = ["product.template"]
+    _name = 'product.template'
+
+    link_ids = fields.One2many(
+        'product.links', 'product_tmpl_id', string='Resource link', help='URL link to resources like datasheets, brochures, white papers, etc...')
