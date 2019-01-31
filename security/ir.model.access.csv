@@ -1,2 +1,3 @@
-"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
-"access_product_link","product.link.user","model_product_links",,1,0,0,0
+"id","name","model_id/id","group_id/id","perm_read","perm_write","perm_create","perm_unlink"
+"access_product_link_admin","product.link.admin","model_product_links","website.group_website_designer","True","True","True","True"
+"access_product_link","product.link.user","model_product_links",,"True","False","False","False"
