@@ -10,7 +10,8 @@ class ProductLinks(models.Model):
     url = fields.Char('Link URL', required=True, translate=True)
     alt_desc = fields.Char('Alt Description', translate=True)
     product_tmpl_id = fields.Many2one('product.template', 'Related Product', copy=True)
-
+    icon = fields.Binary("Link Icon", attachment=True, help="Link icon to be display on the product page")
+    
 class ProductTemplate(models.Model):
     _inherit = ["product.template"]
     _name = 'product.template'
