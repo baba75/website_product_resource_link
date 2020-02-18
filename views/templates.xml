@@ -9,9 +9,8 @@
 
         <!-- Add product links to resources just after the "Add to cart" button -->
         <template id="product_links" inherit_id="website_sale.product" name="Product Links">
-            <xpath expr="//form[@action='/shop/cart/update']" position="after">
+            <xpath expr="//div[@id='product_details']" position="inside">
                 <t t-if="product.link_ids"> 
-                    <hr/>
                     <div>
                         <h2>Resources</h2>
                         <ul>
