@@ -19,7 +19,7 @@
     # Check https://github.com/odoo/odoo/blob/10.0/odoo/addons/base/module/module_data.xml
     # for the full list
     'category': 'Website',
-    'version': '12.0.1',
+    'version': '14.0.1',
 
     # any module necessary for this one to work correctly
     'depends': ['base','website_sale'],
