@@ -12,14 +12,15 @@
         so on.
     """,
 
-    'author': "Alberto Carollo - Ecobeton",
-    'website': "https://www.ecobeton.com",
+    'author': "Alberto Carollo",
+    'website': "https://github.com/baba75",
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/10.0/odoo/addons/base/module/module_data.xml
     # for the full list
     'category': 'Website',
-    'version': '14.0.1',
+    'version': '16.0.1.0.0',
+    'license': "AGPL-3",
 
     # any module necessary for this one to work correctly
     'depends': ['base','website_sale'],
@@ -30,8 +31,10 @@
         'views/views.xml',
         'views/templates.xml',
     ],
-    # only loaded in demonstration mode
-    'demo': [
-        'demo/demo.xml',
-    ],
+    
+     "assets": {
+        "web.report_assets_common": [
+                                     '/website_product_resource_link/static/src/scss/prodlinks.scss',
+                                     ],
+    },
 }

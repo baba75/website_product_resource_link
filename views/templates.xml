@@ -1,12 +1,5 @@
 <odoo>
     <data>
-        <!-- Adds assets in Odoo -->
-        <template id="assets_product_link" name="Product link assets" inherit_id="web.assets_frontend">
-            <xpath expr="//link[last()]" position="after">
-                <link rel="stylesheet" type="text/css" href="/website_product_resource_link/static/src/css/links.css"/>
-            </xpath>
-        </template>
-
         <!-- Add product links to resources just after the "Add to cart" button -->
         <template id="product_links" inherit_id="website_sale.product" name="Product Links">
             <xpath expr="//div[@id='product_details']" position="inside">
