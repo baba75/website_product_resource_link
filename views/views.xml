@@ -8,13 +8,13 @@
                 <xpath expr="//page[last()]" position="after">
                     <page string="Links" name="links">
                         <separator string="Links to product resources" />
-                        <field name="link_ids" mode="tree" context="{'default_name': name, 'default_product_tmpl_id': active_id}">
-                            <tree string="URL Links" editable="bottom">
+                        <field name="link_ids" mode="list" context="{'default_name': name, 'default_product_tmpl_id': id}">
+                            <list string="URL Links" editable="bottom">
                                 <field name="icon"/>
                                 <field name="name" string="Display link name" required="1"/>
                                 <field name="url" string="url" required="1"/>
                                 <field name="alt_desc" string="Alt description"/>
-                            </tree>
+                            </list>
                         </field>
                     </page>
                 </xpath>
@@ -30,7 +30,7 @@
                         <field name="name" required="True"/>
                         <field name="url" required="True"/>
                         <field name="alt_desc"/>
-                        <field name="product_tmpl_id" invisible="1"/>
+                        <field name="product_tmpl_id" column_invisible="1"/>
                     </sheet>
                 </form>
             </field>

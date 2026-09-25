@@ -1,0 +1,145 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* website_product_resource_link
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0-20250603\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-06-11 10:40+0000\n"
+"PO-Revision-Date: 2025-06-11 12:41+0200\n"
+"Last-Translator: Alberto Carollo <alberto.carollo@proton.me>\n"
+"Language-Team: \n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.6\n"
+
+#. module: website_product_resource_link
+#: model:ir.model.fields,field_description:website_product_resource_link.field_product_links__alt_desc
+msgid "Alt Description"
+msgstr "Descrizione Alt"
+
+#. module: website_product_resource_link
+#: model_terms:ir.ui.view,arch_db:website_product_resource_link.product_links_tab
+msgid "Alt description"
+msgstr "Descrizione Alt"
+
+#. module: website_product_resource_link
+#: model:ir.model.fields,field_description:website_product_resource_link.field_product_links__create_uid
+msgid "Created by"
+msgstr "Creato da"
+
+#. module: website_product_resource_link
+#: model:ir.model.fields,field_description:website_product_resource_link.field_product_links__create_date
+msgid "Created on"
+msgstr "Creato il"
+
+#. module: website_product_resource_link
+#: model:ir.model.fields,field_description:website_product_resource_link.field_product_links__display_name
+msgid "Display Name"
+msgstr "Nome Visualizzato"
+
+#. module: website_product_resource_link
+#: model_terms:ir.ui.view,arch_db:website_product_resource_link.product_links_tab
+msgid "Display link name"
+msgstr "Nome collegamento visualizzato"
+
+#. module: website_product_resource_link
+#: model:ir.model.fields,field_description:website_product_resource_link.field_product_links__id
+msgid "ID"
+msgstr "ID"
+
+#. module: website_product_resource_link
+#: model:ir.model.fields,field_description:website_product_resource_link.field_product_links____last_update
+msgid "Last Modified on"
+msgstr "Ultima modifica il"
+
+#. module: website_product_resource_link
+#: model:ir.model.fields,field_description:website_product_resource_link.field_product_links__write_uid
+msgid "Last Updated by"
+msgstr "Ultima modifica di"
+
+#. module: website_product_resource_link
+#: model:ir.model.fields,field_description:website_product_resource_link.field_product_links__write_date
+msgid "Last Updated on"
+msgstr "Ultima modifica il"
+
+#. module: website_product_resource_link
+#: model:ir.model.fields,field_description:website_product_resource_link.field_product_links__icon
+msgid "Link Icon"
+msgstr "Icona del Link"
+
+#. module: website_product_resource_link
+#: model:ir.model.fields,field_description:website_product_resource_link.field_product_links__url
+msgid "Link URL"
+msgstr "URL del Link"
+
+#. module: website_product_resource_link
+#: model:ir.model.fields,help:website_product_resource_link.field_product_links__icon
+msgid "Link icon to be display on the product page"
+msgstr "Icona del link da visualizzare nella pagina del prodotto"
+
+#. module: website_product_resource_link
+#: model:ir.model.fields,field_description:website_product_resource_link.field_product_links__name
+msgid "Link label"
+msgstr "Etichetta link"
+
+#. module: website_product_resource_link
+#: model_terms:ir.ui.view,arch_db:website_product_resource_link.product_links_tab
+msgid "Links"
+msgstr "Link"
+
+#. module: website_product_resource_link
+#: model_terms:ir.ui.view,arch_db:website_product_resource_link.product_links_tab
+msgid "Links to product resources"
+msgstr "Link alle risorse del prodotto"
+
+#. module: website_product_resource_link
+#: model:ir.model,name:website_product_resource_link.model_product_template
+msgid "Product"
+msgstr "Prodotto"
+
+#. module: website_product_resource_link
+#: model_terms:ir.ui.view,arch_db:website_product_resource_link.view_product_links_form
+msgid "Product Links"
+msgstr "Link dei prodotti"
+
+#. module: website_product_resource_link
+#: model:ir.model,name:website_product_resource_link.model_product_links
+msgid "Product resource link"
+msgstr "Link alle risorse del prodotto"
+
+#. module: website_product_resource_link
+#: model:ir.model.fields,field_description:website_product_resource_link.field_product_links__product_tmpl_id
+msgid "Related Product"
+msgstr "Prodotto simili"
+
+#. module: website_product_resource_link
+#: model:ir.model.fields,field_description:website_product_resource_link.field_product_product__link_ids
+#: model:ir.model.fields,field_description:website_product_resource_link.field_product_template__link_ids
+msgid "Resource link"
+msgstr "Collegamento risorsa"
+
+#. module: website_product_resource_link
+#: model_terms:ir.ui.view,arch_db:website_product_resource_link.product_links
+msgid "Resources"
+msgstr "Risorse"
+
+#. module: website_product_resource_link
+#: model_terms:ir.ui.view,arch_db:website_product_resource_link.product_links_tab
+msgid "URL Links"
+msgstr "URL dei collegamenti"
+
+#. module: website_product_resource_link
+#: model:ir.model.fields,help:website_product_resource_link.field_product_product__link_ids
+#: model:ir.model.fields,help:website_product_resource_link.field_product_template__link_ids
+msgid "URL link to resources like datasheets, brochures, white papers, etc..."
+msgstr "Link URL a risorse come schede tecniche, brochure, white paper, ecc..."
+
+#. module: website_product_resource_link
+#: model_terms:ir.ui.view,arch_db:website_product_resource_link.product_links_tab
+msgid "url"
+msgstr "url"

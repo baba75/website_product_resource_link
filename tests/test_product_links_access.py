@@ -1,0 +1,46 @@
+# -*- coding: utf-8 -*-
+from odoo.exceptions import AccessError
+from odoo.tests import new_test_user, tagged
+from odoo.tools import mute_logger
+
+from .common import ProductLinksCommon
+
+
+@tagged('post_install', '-at_install')
+class TestProductLinksAccess(ProductLinksCommon):
+
+    @classmethod
+    def setUpClass(cls):
+        super().setUpClass()
+        cls.designer = new_test_user(
+            cls.env, login='link_designer',
+            groups='base.group_user,website.group_website_designer',
+        )
+        cls.public_user = cls.env.ref('base.public_user')
+
+    def test_designer_full_access(self):
+        Links = self.env['product.links'].with_user(self.designer)
+        link = Links.create({
+            'name': 'Gallery',
+            'url': 'https://example.com/gallery',
+            'product_tmpl_id': self.product_tmpl.id,
+        })
+        link.write({'url': 'https://example.com/new-gallery'})
+        self.assertEqual(link.url, 'https://example.com/new-gallery')
+        link.unlink()
+        self.assertFalse(link.exists())
+
+    def test_public_read_only(self):
+        link = self.link_tds.with_user(self.public_user)
+        self.assertEqual(link.name, 'Technical datasheet')
+        self.assertEqual(link.url, 'https://example.com/tds.pdf')
+
+    @mute_logger('odoo.addons.base.models.ir_model')
+    def test_public_cannot_write(self):
+        Links = self.env['product.links'].with_user(self.public_user)
+        with self.assertRaises(AccessError):
+            Links.create({'name': 'Hack', 'url': 'https://evil.example.com'})
+        with self.assertRaises(AccessError):
+            self.link_tds.with_user(self.public_user).write({'url': 'https://evil.example.com'})
+        with self.assertRaises(AccessError):
+            self.link_tds.with_user(self.public_user).unlink()

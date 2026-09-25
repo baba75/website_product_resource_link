@@ -1,0 +1,27 @@
+# -*- coding: utf-8 -*-
+from odoo.tests import HttpCase, tagged
+
+from .common import ProductLinksCommon
+
+
+@tagged('post_install', '-at_install')
+class TestProductLinksWebsite(HttpCase, ProductLinksCommon):
+
+    def test_product_page_shows_links(self):
+        response = self.url_open(self.product_tmpl.website_url)
+        self.assertEqual(response.status_code, 200)
+        self.assertIn('Resources', response.text)
+        self.assertIn('href="https://example.com/tds.pdf"', response.text)
+        self.assertIn('alt="Technical datasheet PDF"', response.text)
+        self.assertIn('Technical datasheet', response.text)
+        self.assertIn('href="https://example.com/sds.pdf"', response.text)
+        self.assertIn('Safety datasheet', response.text)
+
+    def test_product_page_without_links(self):
+        product = self.env['product.template'].create({
+            'name': 'Product Without Links',
+            'is_published': True,
+        })
+        response = self.url_open(product.website_url)
+        self.assertEqual(response.status_code, 200)
+        self.assertNotIn('<h3>Resources</h3>', response.text)
